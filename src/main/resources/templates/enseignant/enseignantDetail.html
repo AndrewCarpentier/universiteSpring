@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${enseignant.nom} + ' ' + ${enseignant.prenom}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="list-group mx-auto w-25 p-3">
+        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignant.numeroEnseignant}"></button>
+        <button type="button" class="list-group-item list-group-item-action list-group-item-light" th:text="${enseignant.nom}"></button>
+        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignant.prenom}"></button>
+        <button type="button" class="list-group-item list-group-item-action list-group-item-light" th:text="${enseignant.dateNaissance}"></button>
+        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignant.sexe}"></button>
+        <button type="button" class="list-group-item list-group-item-action list-group-item-light" th:text="${enseignant.grade}"></button>
+        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignant.dateEmbauche}"></button>
+    </div>
+
+</body>
+</html>
