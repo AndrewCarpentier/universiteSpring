@@ -20,7 +20,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
 
 
     @Override
-    @GetMapping(path = "/enseignant")
+    @GetMapping(path = "/enseignant", name = "enseignant")
     public String findAll(Model model) {
         List<Enseignant> enseignants = enseignantBusiness.findAll();
         model.addAttribute("enseignants", enseignants);
@@ -29,7 +29,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
     }
 
     @Override
-    @GetMapping(path = "/enseignant/detail")
+    @GetMapping(path = "/enseignant/detail", name = "detail")
     public String findOneById(Model model, @RequestParam Integer id) {
         Enseignant enseignant = enseignantBusiness.findOneById(id);
         model.addAttribute("enseignant", enseignant);
