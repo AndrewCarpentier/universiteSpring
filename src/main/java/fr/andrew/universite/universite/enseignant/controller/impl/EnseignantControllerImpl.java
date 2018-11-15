@@ -57,7 +57,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
 
     @Override
     @GetMapping(path = "/enseignant/delete", name = "delete")
-    public String delete(Integer id) {
+    public String delete(@RequestParam Integer id) {
         enseignantBusiness.delete(id);
 
         return "redirect:/enseignant";

@@ -1,5 +1,7 @@
 package fr.andrew.universite.universite.etudiant.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,6 +18,7 @@ public class Etudiant {
     @Column(name = "prenom")
     private String prenom;
     @Column(name = "date_naissance")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dateNaissance;
     @Column(name = "sexe")
     private String sexe;

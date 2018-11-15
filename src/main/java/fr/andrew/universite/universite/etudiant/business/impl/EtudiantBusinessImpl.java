@@ -20,4 +20,27 @@ public class EtudiantBusinessImpl implements IEtudiantBusiness{
         return etudiantRepository.findAll();
     }
 
+    @Override
+    public Etudiant findOneById(Integer id) {
+        return etudiantRepository.getOne(id);
+    }
+
+    @Override
+    public Etudiant add(Etudiant etudiant) {
+        return etudiantRepository.save(etudiant);
+    }
+
+    @Override
+    public Void delete(Integer id) {
+        etudiantRepository.deleteById(id);
+
+        return null;
+    }
+
+    @Override
+    public Etudiant modifier(Etudiant etudiant) {
+        return etudiantRepository.save(etudiant);
+    }
+
+
 }
