@@ -3,6 +3,7 @@ package fr.andrew.universite.universite.enseignant.domain;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity(name = "t_enseignant")
 public class Enseignant {
@@ -17,18 +18,20 @@ public class Enseignant {
     @Column(name = "prenom")
     private String prenom;
     @Column(name = "dateNaissance")
-    private String dateNaissance;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date dateNaissance;
     @Column(name = "sexe")
     private String sexe;
     @Column(name = "grade")
     private String grade;
     @Column(name = "date_embauche")
-    private String dateEmbauche;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date dateEmbauche;
 
     public Enseignant() {
     }
 
-    public Enseignant(Integer numeroEnseignant, String nom, String prenom, String dateNaissance, String sexe, String grade, String dateEmbauche) {
+    public Enseignant(Integer numeroEnseignant, String nom, String prenom, Date dateNaissance, String sexe, String grade, Date dateEmbauche) {
         this.numeroEnseignant = numeroEnseignant;
         this.nom = nom;
         this.prenom = prenom;
@@ -70,14 +73,6 @@ public class Enseignant {
         this.prenom = prenom;
     }
 
-    public String getDateNaissance() {
-        return dateNaissance;
-    }
-
-    public void setDateNaissance(String dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
-
     public String getSexe() {
         return sexe;
     }
@@ -94,13 +89,19 @@ public class Enseignant {
         this.grade = grade;
     }
 
-    public String getDateEmbauche() {
+    public Date getDateNaissance() {
+        return dateNaissance;
+    }
+
+    public void setDateNaissance(Date dateNaissance) {
+        this.dateNaissance = dateNaissance;
+    }
+
+    public Date getDateEmbauche() {
         return dateEmbauche;
     }
 
-    public void setDateEmbauche(String dateEmbauche) {
+    public void setDateEmbauche(Date dateEmbauche) {
         this.dateEmbauche = dateEmbauche;
     }
-
-
 }

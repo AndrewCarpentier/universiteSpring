@@ -6,6 +6,7 @@ import fr.andrew.universite.universite.enseignant.repository.IEnseignantReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -23,4 +24,21 @@ public class EnseignantBusinesImpl implements IEnseignantBusiness {
     public Enseignant findOneById(Integer id) {
         return enseignantRepository.getOne(id);
     }
+
+    @Override
+    public Enseignant add(Enseignant enseignant) {
+        return enseignantRepository.save(enseignant);
+    }
+
+    @Override
+    public Void delete(Integer id) {
+        enseignantRepository.deleteById(id);
+        return null;
+    }
+
+    @Override
+    public Enseignant modifier(Enseignant enseignant) {
+        return enseignantRepository.save(enseignant);
+    }
+
 }
