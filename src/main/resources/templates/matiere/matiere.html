@@ -31,7 +31,7 @@
             <th scope="col">Numero Matiere</th>
             <th scope="col">Nom</th>
             <th scope="col">Coef</th>
-            <th scope="col">Id Enseignant</th>
+            <th scope="col">Enseignant</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -42,10 +42,9 @@
             <td th:text="${matieres.numeroMatiere}"></td>
             <td th:text="${matieres.nom}"></td>
             <td th:text="${matieres.coef}"></td>
-            <td><a class="nav-link" th:href="@{/enseignant/detail(id=${matieres.idEnseignant})}" th:text="${matieres.idEnseignant}"></a></td>
+            <td th:text="${matieres.enseignants.nom} + ' ' + ${matieres.enseignants.prenom}"></td>
             <td><a th:href="@{/matiere/modifier(id=${matieres.id})}" class="list-group-item list-group-item-action list-group-item-light" role="button"><i class="fa fa-edit">  Modifier</i></a></td>
             <td><a th:href="@{/matiere/delete(id=${matieres.id})}" class="list-group-item list-group-item-action list-group-item-light" role="button"><i class="fa fa-minus-square">  Supprimer</i></a></td>
-
         </tr>
         </tbody>
     </table>

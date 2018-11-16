@@ -1,6 +1,7 @@
 package fr.andrew.universite.universite.matiere.business;
 
 
+import fr.andrew.universite.universite.enseignant.domain.Enseignant;
 import fr.andrew.universite.universite.matiere.domain.Matiere;
 
 import java.util.List;
@@ -12,5 +13,6 @@ public interface IMatiereBusiness {
     Matiere add(Matiere matiere);
     Void delete(Integer id);
     Matiere modifier(Matiere matiere);
+    List<Enseignant> getEnseignant();
 
 }

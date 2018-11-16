@@ -1,11 +1,13 @@
 package fr.andrew.universite.universite.enseignant.domain;
 
+import fr.andrew.universite.universite.matiere.domain.Matiere;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "t_enseignant")
+@Entity
+@Table(name = "t_enseignant")
 public class Enseignant {
 
     @Id
@@ -27,6 +29,8 @@ public class Enseignant {
     @Column(name = "date_embauche")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dateEmbauche;
+
+
 
     public Enseignant() {
     }

@@ -22,7 +22,7 @@
     </ul>
 
     <!--formulaire-->
-    <div class="mx-auto w-25 p-3">
+    <div class="mx-auto w-25 ">
         <form class="well form-horizontal" th:action="@{/matiere/modifier}" th:object="${matiere}" method="post">
             <fieldset>
                 <label for="id"></label>
@@ -46,9 +46,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Id de l'enseignant</label>
+                    <label for="idEnseignant" class="col-md-4 control-label">Id de l'enseignant</label>
                     <div class="col-md-8 inputGroupContainer">
-                        <div class="input-group"><span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="idEnseignant" th:field="*{idEnseignant}" placeholder="id de l'enseignant" class="form-control" required="true" type="text"></div>
+                        <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-tie"></i></span>
+                            <select class="form-control" id="idEnseignant" th:field="*{enseignants}">
+                                <option th:each="enseignant:${enseignants}" th:value="${enseignant.id}" th:text="${enseignant.nom} + ' ' + ${enseignant.prenom}"></option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 

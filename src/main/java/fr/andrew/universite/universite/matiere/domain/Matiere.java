@@ -1,8 +1,13 @@
 package fr.andrew.universite.universite.matiere.domain;
 
-import javax.persistence.*;
+import fr.andrew.universite.universite.enseignant.domain.Enseignant;
 
-@Entity(name = "t_matiere")
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "t_matiere")
 public class Matiere {
 
     @Id
@@ -14,17 +19,18 @@ public class Matiere {
     private String nom;
     @Column(name = "coef")
     private Integer coef;
-    @Column(name = "id_enseignant")
-    private Integer idEnseignant;
+    @OneToOne
+    @JoinColumn(name = "id_enseignant")
+    private Enseignant enseignants = new Enseignant();
 
     public Matiere() {
     }
 
-    public Matiere(Integer numeroMatiere, String nom, Integer coef, Integer idEnseignant) {
+    public Matiere(Integer numeroMatiere, String nom, Integer coef, Enseignant enseignants) {
         this.numeroMatiere = numeroMatiere;
         this.nom = nom;
         this.coef = coef;
-        this.idEnseignant = idEnseignant;
+        this.enseignants = enseignants;
     }
 
     public Integer getId() {
@@ -59,11 +65,11 @@ public class Matiere {
         this.coef = coef;
     }
 
-    public Integer getIdEnseignant() {
-        return idEnseignant;
+    public Enseignant getEnseignants() {
+        return enseignants;
     }
 
-    public void setIdEnseignant(Integer idEnseignant) {
-        this.idEnseignant = idEnseignant;
+    public void setEnseignants(Enseignant enseignants) {
+        this.enseignants = enseignants;
     }
 }
