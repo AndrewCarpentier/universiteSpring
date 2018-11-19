@@ -37,12 +37,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="matieres:${matieres}"> 
+        <tr th:each="matieres:${matieres}">
             <th scope="row" th:text="${matieres.id}"></th>
             <td th:text="${matieres.numeroMatiere}"></td>
             <td th:text="${matieres.nom}"></td>
             <td th:text="${matieres.coef}"></td>
-            <td th:text="${matieres.enseignants.nom} + ' ' + ${matieres.enseignants.prenom}"></td>
+            <td th:text="${matieres.enseignant.nom} + ' ' + ${matieres.enseignant.prenom}"></td>
             <td><a th:href="@{/matiere/modifier(id=${matieres.id})}" class="list-group-item list-group-item-action list-group-item-light" role="button"><i class="fa fa-edit">  Modifier</i></a></td>
             <td><a th:href="@{/matiere/delete(id=${matieres.id})}" class="list-group-item list-group-item-action list-group-item-light" role="button"><i class="fa fa-minus-square">  Supprimer</i></a></td>
         </tr>

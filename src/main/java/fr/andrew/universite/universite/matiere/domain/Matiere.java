@@ -1,9 +1,9 @@
 package fr.andrew.universite.universite.matiere.domain;
 
 import fr.andrew.universite.universite.enseignant.domain.Enseignant;
+import fr.andrew.universite.universite.note.domain.Note;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,18 +19,22 @@ public class Matiere {
     private String nom;
     @Column(name = "coef")
     private Integer coef;
-    @OneToOne
+    //@OneToOne
+    //@JoinColumn(name = "id_enseignant")
+    //private Enseignant enseignant = new Enseignant();
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "id_enseignant")
-    private Enseignant enseignants = new Enseignant();
-
-    public Matiere() {
+    private Enseignant enseignant;
+    @OneToMany(mappedBy = "matiere")
+    private List<Note> notes;
+    public List<Note> getNotes() {
+        return notes;
     }
 
-    public Matiere(Integer numeroMatiere, String nom, Integer coef, Enseignant enseignants) {
-        this.numeroMatiere = numeroMatiere;
-        this.nom = nom;
-        this.coef = coef;
-        this.enseignants = enseignants;
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
+    }
+    public Matiere() {
     }
 
     public Integer getId() {
@@ -65,11 +69,12 @@ public class Matiere {
         this.coef = coef;
     }
 
-    public Enseignant getEnseignants() {
-        return enseignants;
+    public Enseignant getEnseignant() {
+        return enseignant;
     }
 
-    public void setEnseignants(Enseignant enseignants) {
-        this.enseignants = enseignants;
+    public void setEnseignant(Enseignant enseignants) {
+        this.enseignant = enseignants;
     }
+
 }

@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "t_enseignant")
@@ -29,6 +30,8 @@ public class Enseignant {
     @Column(name = "date_embauche")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dateEmbauche;
+    @OneToMany(mappedBy = "enseignant")
+    private List<Matiere> matieres;
 
 
 
@@ -43,6 +46,17 @@ public class Enseignant {
         this.sexe = sexe;
         this.grade = grade;
         this.dateEmbauche = dateEmbauche;
+    }
+
+    public Enseignant(Integer numeroEnseignant, String nom, String prenom, Date dateNaissance, String sexe, String grade, Date dateEmbauche, List<Matiere> matieres) {
+        this.numeroEnseignant = numeroEnseignant;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+        this.sexe = sexe;
+        this.grade = grade;
+        this.dateEmbauche = dateEmbauche;
+        this.matieres = matieres;
     }
 
     public Integer getId() {

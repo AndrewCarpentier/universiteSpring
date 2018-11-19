@@ -43,10 +43,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="idEnseignant" class="col-md-4 control-label">Id de l'enseignant</label>
+                    <label for="idEnseignant" class="col-md-4 control-label">Enseignant</label>
                     <div class="col-md-8 inputGroupContainer">
                         <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-tie"></i></span>
-                            <select class="form-control" id="idEnseignant" th:field="*{enseignants}">
+                            <select class="form-control" id="idEnseignant" th:field="*{enseignant}">
                                 <option th:each="enseignant:${enseignants}" th:value="${enseignant.id}" th:text="${enseignant.nom} + ' ' + ${enseignant.prenom}"></option>
                             </select>
                         </div>

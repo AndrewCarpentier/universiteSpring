@@ -1,9 +1,11 @@
 package fr.andrew.universite.universite.etudiant.domain;
 
+import fr.andrew.universite.universite.note.domain.Note;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "t_etudiant")
@@ -23,17 +25,17 @@ public class Etudiant {
     private Date dateNaissance;
     @Column(name = "sexe")
     private String sexe;
+    @OneToMany(mappedBy = "etudiant")
+    private List<Note> notes;
 
-    public Etudiant() {
+    public List<Note> getNotes() {
+        return notes;
     }
 
-    public Etudiant(Integer numeroEtudiant, String nom, String prenom, Date dateNaissance, String sexe) {
-        this.numeroEtudiant = numeroEtudiant;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
-        this.sexe = sexe;
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
+
 
     public Integer getId() {
         return id;
