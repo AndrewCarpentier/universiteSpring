@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<style>
+    table, th, td{
+        border: 2px black solid;
+        border-collapse: collapse;
+    }
+</style>
     <table>
         <tr th:each="n : ${note}">
-            <td th:text="${n.etudiant.nom}"></td>
+            <td th:text="${n.etudiant.nom} + ' ' + ${n.etudiant.prenom}"></td>
             <td th:text="${n.matiere.nom}"></td>
             <td th:text="${n.note}"></td>
 

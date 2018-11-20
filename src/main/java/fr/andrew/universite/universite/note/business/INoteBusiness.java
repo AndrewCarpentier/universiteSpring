@@ -8,6 +8,7 @@ import java.util.List;
 public interface INoteBusiness {
 
     List<Note> finddAll();
+
 }
 
 

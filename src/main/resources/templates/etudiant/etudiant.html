@@ -33,6 +33,7 @@
         <th scope="col">Prenom</th>
         <th scope="col">Date de naissance</th>
         <th scope="col">Sexe</th>
+        <th scope="col" style="width: 120px"></th>
         <th scope="col"></th>
         <th scope="col"></th>
     </tr>
@@ -45,6 +46,7 @@
         <td th:text="${etudiant.prenom}"></td>
         <td th:text="${#dates.format(etudiant.dateNaissance, 'dd MMMMM yyyy')}"></td>
         <td th:text="${etudiant.sexe}"></td>
+        <td><a th:href="@{/etudiant/note(id=${etudiant.id})}" class="list-group-item list-group-item-action list-group-item-light" role="button"><i class="fa fa-plus">  Note</i></a></td>
         <td><a th:href="@{/etudiant/modifier(id=${etudiant.id})}" class="list-group-item list-group-item-action list-group-item-light" role="button"><i class="fa fa-user-edit">  Modifier</i></a></td>
         <td><a th:href="@{/etudiant/delete(id=${etudiant.id})}" class="list-group-item list-group-item-action list-group-item-light" role="button"><i class="fa fa-user-times">  Supprimer</i></a></td>
     </tr>

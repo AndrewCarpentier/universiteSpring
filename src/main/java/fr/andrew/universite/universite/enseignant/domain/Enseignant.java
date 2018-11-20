@@ -33,32 +33,6 @@ public class Enseignant {
     @OneToMany(mappedBy = "enseignant")
     private List<Matiere> matieres;
 
-
-
-    public Enseignant() {
-    }
-
-    public Enseignant(Integer numeroEnseignant, String nom, String prenom, Date dateNaissance, String sexe, String grade, Date dateEmbauche) {
-        this.numeroEnseignant = numeroEnseignant;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
-        this.sexe = sexe;
-        this.grade = grade;
-        this.dateEmbauche = dateEmbauche;
-    }
-
-    public Enseignant(Integer numeroEnseignant, String nom, String prenom, Date dateNaissance, String sexe, String grade, Date dateEmbauche, List<Matiere> matieres) {
-        this.numeroEnseignant = numeroEnseignant;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
-        this.sexe = sexe;
-        this.grade = grade;
-        this.dateEmbauche = dateEmbauche;
-        this.matieres = matieres;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -121,5 +95,13 @@ public class Enseignant {
 
     public void setDateEmbauche(Date dateEmbauche) {
         this.dateEmbauche = dateEmbauche;
+    }
+
+    public List<Matiere> getMatieres() {
+        return matieres;
+    }
+
+    public void setMatieres(List<Matiere> matieres) {
+        this.matieres = matieres;
     }
 }

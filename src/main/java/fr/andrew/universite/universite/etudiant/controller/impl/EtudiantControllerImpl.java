@@ -31,8 +31,8 @@ public class EtudiantControllerImpl implements IEtudiantController {
     @Override
     @GetMapping(path = "/etudiant/detail", name = "detail")
     public String findOneById(Model model, @RequestParam Integer id) {
-        etudiantBusiness.findOneById(id);
-
+        Etudiant etudiant = etudiantBusiness.findOneById(id);
+        model.addAttribute("etudiant", etudiant);
         return "etudiant/etudiantDetail";
     }
 
@@ -77,6 +77,14 @@ public class EtudiantControllerImpl implements IEtudiantController {
         etudiantBusiness.modifier(etudiant);
 
         return "redirect:/etudiant";
+    }
+
+    @Override
+    @GetMapping(path = "/etudiant/note", name = "note")
+    public String note(Model model, @RequestParam Integer id) {
+        model.addAttribute("etudiant", etudiantBusiness.findOneById(id));
+
+        return "etudiant/etudiantNote";
     }
 
 

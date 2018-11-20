@@ -12,5 +12,6 @@ public interface IEtudiantController {
     String delete(Integer id);
     String modifier(Model model, Integer id);
     String modifierPost(Etudiant etudiant);
+    String note(Model model, Integer id);
 
 }

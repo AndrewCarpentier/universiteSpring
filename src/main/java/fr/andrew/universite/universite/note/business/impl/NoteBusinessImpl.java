@@ -18,4 +18,6 @@ public class NoteBusinessImpl implements INoteBusiness {
 
         return noteRepository.findAll() ;
     }
+
+
 }
