@@ -46,8 +46,7 @@ public class MatiereBusinessImpl implements IMatiereBusiness {
 
     @Override
     public List<Enseignant> getEnseignant() {
-        List<Enseignant> enseignant = enseignantBusiness.findAll();
-        return enseignant;
+        return enseignantBusiness.findAll();
     }
 
     @Override

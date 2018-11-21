@@ -1,8 +1,5 @@
 package fr.andrew.universite.universite.note.domain;
 
-import fr.andrew.universite.universite.etudiant.domain.Etudiant;
-import fr.andrew.universite.universite.matiere.domain.Matiere;
-
 import javax.persistence.*;
 import java.io.Serializable;
 

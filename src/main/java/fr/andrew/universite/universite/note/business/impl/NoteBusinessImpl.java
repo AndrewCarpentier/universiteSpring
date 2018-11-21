@@ -36,14 +36,12 @@ public class NoteBusinessImpl implements INoteBusiness {
 
     @Override
     public List<Etudiant> getEtudiant() {
-        List<Etudiant> etudiants = etudiantBusiness.findAll();
-        return etudiants;
+        return etudiantBusiness.findAll();
     }
 
     @Override
     public List<Matiere> getMatiere() {
-        List<Matiere> matieres = matiereBusiness.findAll();
-        return matieres;
+        return matiereBusiness.findAll();
     }
 
 

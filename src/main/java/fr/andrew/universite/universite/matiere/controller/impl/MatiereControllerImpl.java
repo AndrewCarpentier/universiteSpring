@@ -1,7 +1,5 @@
 package fr.andrew.universite.universite.matiere.controller.impl;
 
-import ch.qos.logback.classic.Logger;
-import fr.andrew.universite.universite.enseignant.business.IEnseignantBusiness;
 import fr.andrew.universite.universite.enseignant.domain.Enseignant;
 import fr.andrew.universite.universite.matiere.business.IMatiereBusiness;
 import fr.andrew.universite.universite.matiere.controller.IMatiereController;
