@@ -15,4 +15,6 @@ public interface IMatiereBusiness {
     Matiere modifier(Matiere matiere);
     List<Enseignant> getEnseignant();
 
+    Enseignant getEnseignantByID(Integer id);
+
 }

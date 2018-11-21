@@ -1,11 +1,20 @@
 package fr.andrew.universite.universite.note.controller.impl;
 
+import fr.andrew.universite.universite.etudiant.domain.Etudiant;
+import fr.andrew.universite.universite.matiere.domain.Matiere;
 import fr.andrew.universite.universite.note.business.INoteBusiness;
 import fr.andrew.universite.universite.note.controller.INoteController;
+import fr.andrew.universite.universite.note.domain.Note;
+import fr.andrew.universite.universite.note.domain.NotePk;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class NoteControllerImpl implements INoteController {
@@ -19,5 +28,30 @@ public class NoteControllerImpl implements INoteController {
         model.addAttribute("note", noteBusiness.finddAll());
 
         return "/note/note";
+    }
+
+    @Override
+    @GetMapping(path = "/note/add", name = "ajouter")
+    public String addNote(Model model) {
+        List<Etudiant> etudiants = noteBusiness.getEtudiant();
+        List<Matiere> matieres = noteBusiness.getMatiere();
+        model.addAttribute("note", new Note());
+        model.addAttribute("etudiants", etudiants);
+        model.addAttribute("matieres", matieres);
+
+        return "/note/noteAdd";
+    }
+
+    @Override
+    @PostMapping(path = "/note/add", name = "ajouter")
+    public String addPost(@ModelAttribute Note note, @RequestParam Integer idEtudiant, @RequestParam Integer idMatiere) {
+        NotePk notePk = new NotePk();
+        notePk.setEtudiant(idEtudiant);
+        notePk.setMatiere(idMatiere);
+        note.setNotePk(notePk);
+
+        noteBusiness.addNote(note);
+
+        return "redirect:/note";
     }
 }

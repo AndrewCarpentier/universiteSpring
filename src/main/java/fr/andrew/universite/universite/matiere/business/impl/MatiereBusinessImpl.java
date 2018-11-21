@@ -51,4 +51,9 @@ public class MatiereBusinessImpl implements IMatiereBusiness {
         List<Enseignant> enseignant = enseignantBusiness.findAll();
         return enseignant;
     }
+
+    @Override
+    public Enseignant getEnseignantByID(Integer id) {
+        return enseignantBusiness.findOneById(id);
+    }
 }

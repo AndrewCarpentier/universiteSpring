@@ -14,7 +14,7 @@ public class Note {
     private NotePk notePk;
 
     @Column(name = "note")
-    private Double note;
+    private Double noteValue;
     @ManyToOne
     @JoinColumn(name = "id_etudiant", insertable = false, updatable = false)
     private Etudiant etudiant;
@@ -30,12 +30,12 @@ public class Note {
         this.notePk = notePk;
     }
 
-    public Double getNote() {
-        return note;
+    public Double getNoteValue() {
+        return noteValue;
     }
 
-    public void setNote(Double note) {
-        this.note = note;
+    public void setNoteValue(Double noteValue) {
+        this.noteValue = noteValue;
     }
 
     public Etudiant getEtudiant() {

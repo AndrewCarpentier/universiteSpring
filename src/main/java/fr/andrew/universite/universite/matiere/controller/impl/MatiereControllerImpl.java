@@ -81,6 +81,8 @@ public class MatiereControllerImpl implements IMatiereController {
     @Override
     @PostMapping(path = "matiere/modifier", name = "modifier")
     public String modifierPost(@ModelAttribute Matiere matiere) {
+        Enseignant e = matiereBusiness.getEnseignantByID(matiere.getEnseignant().getId());
+        matiere.setEnseignant(e);
         matiereBusiness.modifier(matiere);
 
         return "redirect:/matiere";
