@@ -5,8 +5,6 @@ import fr.andrew.universite.universite.enseignant.domain.Enseignant;
 import fr.andrew.universite.universite.enseignant.repository.IEnseignantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 import java.util.List;
 
 @Service

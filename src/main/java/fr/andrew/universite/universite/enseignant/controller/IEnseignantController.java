@@ -3,8 +3,6 @@ package fr.andrew.universite.universite.enseignant.controller;
 import fr.andrew.universite.universite.enseignant.domain.Enseignant;
 import org.springframework.ui.Model;
 
-import java.util.Date;
-
 public interface IEnseignantController {
 
     String findAll(Model model);

@@ -19,9 +19,6 @@ public class Matiere {
     private String nom;
     @Column(name = "coef")
     private Integer coef;
-    //@OneToOne
-    //@JoinColumn(name = "id_enseignant")
-    //private Enseignant enseignant = new Enseignant();
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "id_enseignant")
     private Enseignant enseignant;
