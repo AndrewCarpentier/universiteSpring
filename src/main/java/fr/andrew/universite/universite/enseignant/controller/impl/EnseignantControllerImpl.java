@@ -15,7 +15,6 @@ public class EnseignantControllerImpl implements IEnseignantController {
     @Autowired
     private IEnseignantBusiness enseignantBusiness;
 
-
     @Override
     @GetMapping(path = "/enseignant", name = "enseignant")
     public String findAll(Model model) {
@@ -28,8 +27,8 @@ public class EnseignantControllerImpl implements IEnseignantController {
     @Override
     @GetMapping(path = "/enseignant/detail", name = "detail")
     public String findOneById(Model model, @RequestParam Integer id) {
-        Enseignant enseignant = enseignantBusiness.findOneById(id);
-        model.addAttribute("enseignant", enseignant);
+        Enseignant enseignantById = enseignantBusiness.findOneById(id);
+        model.addAttribute("enseignant", enseignantById);
 
         return "enseignant/enseignantDetail";
     }
@@ -64,9 +63,9 @@ public class EnseignantControllerImpl implements IEnseignantController {
     @Override
     @GetMapping(path = "/enseignant/modifier", name = "modifier")
     public String modifier(Model model, @RequestParam Integer id) {
-        Enseignant enseignant = enseignantBusiness.findOneById(id);
-        model.addAttribute("enseignant", enseignant);
+        Enseignant enseignantById2 = enseignantBusiness.findOneById(id);
 
+        model.addAttribute("enseignant", enseignantById2);
         return "/enseignant/enseignantModifier";
     }
 
@@ -76,7 +75,6 @@ public class EnseignantControllerImpl implements IEnseignantController {
         enseignantBusiness.modifier(enseignant);
 
         return "redirect:/enseignant";
-
     }
 
 }
