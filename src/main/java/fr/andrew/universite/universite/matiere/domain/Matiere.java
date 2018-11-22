@@ -24,7 +24,6 @@ public class Matiere {
     private Enseignant enseignant;
     @OneToMany(mappedBy = "matiere")
     private List<Note> notes;
-
     public List<Note> getNotes() {
         return notes;
     }
