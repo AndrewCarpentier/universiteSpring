@@ -23,7 +23,7 @@ public class Matiere {
     @JoinColumn(name = "id_enseignant")
     private Enseignant enseignant;
     @OneToMany(mappedBy = "matiere")
-    private List<Note> notes;
+    private List<Note> notes; 
     public List<Note> getNotes() {
         return notes;
     }
