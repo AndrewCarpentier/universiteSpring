@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-bottom: 1px white solid">
+        <a class="navbar-brand active" href="#">Universite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/enseignant}"><i class="fa fa-user-tie">  Enseignant</i></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/etudiant}"><i class="fa fa-user">  Etudiant</i></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/matiere}"><i class="fa fa-object-group">  Matiere</i></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/note}"><i class="fa fa-plus">  Note</i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</html>

@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <title th:text="${enseignant.nom} + ' ' + ${enseignant.prenom}"></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -33,25 +30,25 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label">Numero Enseignant</label>
                     <div class="col-md-8 inputGroupContainer">
-                        <div class="input-group"><span class="input-group-addon"><i class="fa fa-barcode"></i></span><input id="numeroEnseignant" th:field="*{numeroEnseignant}" placeholder="Numero enseignant" class="form-control" required="true" type="text"></div>
+                        <div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-barcode"></i></div></div><input id="numeroEnseignant" th:field="*{numeroEnseignant}" placeholder="Numero enseignant" class="form-control" required="true" type="text"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-4 control-label">Nom</label>
                     <div class="col-md-8 inputGroupContainer">
-                        <div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span><input id="nom" th:field="*{nom}" placeholder="nom" class="form-control" required="true" type="text"></div>
+                        <div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-user"></i></div></div><input id="nom" th:field="*{nom}" placeholder="nom" class="form-control" required="true" type="text"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-4 control-label">Prenom</label>
                     <div class="col-md-8 inputGroupContainer">
-                        <div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span><input id="prenom" th:field="*{prenom}" placeholder="prenom" class="form-control" required="true" type="text"></div>
+                        <div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-user"></i></div></div><input id="prenom" th:field="*{prenom}" placeholder="prenom" class="form-control" required="true" type="text"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-4 control-label">Date de naissance</label>
                     <div class="col-md-8 inputGroupContainer">
-                        <div class="input-group"><span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="dateNaissance" th:field="*{dateNaissance}" placeholder="date de naissance (ex: 10/04/1996)" class="form-control" required="true" type="text"></div>
+                        <div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-calendar"></i></div></div><input id="dateNaissance" th:field="*{dateNaissance}" placeholder="date de naissance (ex: 10/04/1996)" class="form-control" required="true" type="text"></div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -73,13 +70,13 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label">Grade</label>
                     <div class="col-md-8 inputGroupContainer">
-                        <div class="input-group"><span class="input-group-addon"><i class="fa fa-sitemap"></i></span><input id="grade" th:field="*{grade}" placeholder="grade" class="form-control" required="true" type="text"></div>
+                        <div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-sitemap"></i></div></div><input id="grade" th:field="*{grade}" placeholder="grade" class="form-control" required="true" type="text"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-4 control-label">Date d'embauche</label>
                     <div class="col-md-8 inputGroupContainer">
-                        <div class="input-group"><span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="dateEmbauche" th:field="*{dateEmbauche}" placeholder="date d'embauche (ex: 10/04/1996)" class="form-control" required="true" type="text"></div>
+                        <div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-calendar"></i></div></div><input id="dateEmbauche" th:field="*{dateEmbauche}" placeholder="date d'embauche (ex: 10/04/1996)" class="form-control" required="true" type="text"></div>
                     </div>
                 </div>
 

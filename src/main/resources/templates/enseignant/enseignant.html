@@ -6,28 +6,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<body>
-    <!--nav-->
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" th:href="@{/enseignant}"><i class="fa fa-user-tie">  ENSEIGNANT</i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/etudiant}"><i class="fa fa-user">  ETUDIANT</i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/matiere}"><i class="fa fa-object-group">  MATIERE</i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/note}"><i class="fa fa-plus">  NOTE</i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/enseignant/add}"><i class="fa fa-user-plus">  AJOUTER UN ENSEIGNANT</i></a>
-        </li>
-    </ul>
+<body class="bg-dark">
+<!--nav-->
+    <header th:insert="utils.html"> </header>
 
-    <!--tableau-->
-    <table class="table table-hover">
+<!--tableau-->
+    <table class="table table-hover table-dark">
         <thead>
         <tr>
             <th scope="col">#</th>
