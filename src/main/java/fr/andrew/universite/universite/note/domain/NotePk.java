@@ -1,8 +1,11 @@
 package fr.andrew.universite.universite.note.domain;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Data
 @Embeddable
 public class NotePk implements Serializable {
     @Column(name = "id_etudiant")
@@ -10,19 +13,4 @@ public class NotePk implements Serializable {
     @Column(name = "id_matiere")
     private Integer matiere;
 
-    public void setEtudiant(Integer etudiant) {
-        this.etudiant = etudiant;
-    }
-
-    public void setMatiere(Integer matiere) {
-        this.matiere = matiere;
-    }
-
-    public Integer getEtudiant() {
-        return etudiant;
-    }
-
-    public Integer getMatiere() {
-        return matiere;
-    }
 }

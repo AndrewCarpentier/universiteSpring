@@ -2,9 +2,11 @@ package fr.andrew.universite.universite.note.domain;
 
 import fr.andrew.universite.universite.etudiant.domain.Etudiant;
 import fr.andrew.universite.universite.matiere.domain.Matiere;
+import lombok.Data;
+
 import javax.persistence.*;
 
-
+@Data
 @Entity
 @Table(name = "noter")
 public class Note {
@@ -21,35 +23,4 @@ public class Note {
     @JoinColumn(name = "id_matiere", insertable = false, updatable = false)
     private Matiere matiere;
 
-    public NotePk getNotePk() {
-        return notePk;
-    }
-
-    public void setNotePk(NotePk notePk) {
-        this.notePk = notePk;
-    }
-
-    public Double getNoteValue() {
-        return noteValue;
-    }
-
-    public void setNoteValue(Double noteValue) {
-        this.noteValue = noteValue;
-    }
-
-    public Etudiant getEtudiant() {
-        return etudiant;
-    }
-
-    public void setEtudiant(Etudiant etudiant) {
-        this.etudiant = etudiant;
-    }
-
-    public Matiere getMatiere() {
-        return matiere;
-    }
-
-    public void setMatiere(Matiere matiere) {
-        this.matiere = matiere;
-    }
 }
