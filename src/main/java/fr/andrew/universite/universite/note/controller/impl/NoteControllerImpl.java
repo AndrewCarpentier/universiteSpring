@@ -22,6 +22,10 @@ public class NoteControllerImpl implements INoteController {
     @Autowired
     private INoteBusiness noteBusiness;
 
+    private static String getRedirectNote(){
+        return "redirect:/note";
+    }
+
     @Override
     @GetMapping(path = "/note", name = "note")
     public String findAll(Model model) {
@@ -52,6 +56,6 @@ public class NoteControllerImpl implements INoteController {
 
         noteBusiness.addNote(note);
 
-        return "redirect:/note";
+        return getRedirectNote();
     }
 }

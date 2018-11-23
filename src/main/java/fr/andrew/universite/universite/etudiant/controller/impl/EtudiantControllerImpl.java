@@ -19,6 +19,11 @@ public class EtudiantControllerImpl implements IEtudiantController {
     @Autowired
     private IEtudiantBusiness etudiantBusiness;
 
+    private static String getRedirectEtudiant(){
+        return "redirect:/etudiant";
+    }
+
+
     @Override
     @GetMapping(path = "/etudiant", name = "etudiant")
     public String findAll(Model model) {
@@ -51,7 +56,7 @@ public class EtudiantControllerImpl implements IEtudiantController {
     public String addPost(@ModelAttribute Etudiant etudiant) {
         etudiantBusiness.add(etudiant);
 
-        return "redirect:/etudiant";
+        return getRedirectEtudiant();
     }
 
     @Override
@@ -59,7 +64,7 @@ public class EtudiantControllerImpl implements IEtudiantController {
     public String delete(@RequestParam Integer id) {
         etudiantBusiness.delete(id);
 
-        return "redirect:/etudiant";
+        return getRedirectEtudiant();
     }
 
     @Override
@@ -76,7 +81,7 @@ public class EtudiantControllerImpl implements IEtudiantController {
     public String modifierPost(@ModelAttribute Etudiant etudiant) {
         etudiantBusiness.modifier(etudiant);
 
-        return "redirect:/etudiant";
+        return getRedirectEtudiant();
     }
 
     @Override
