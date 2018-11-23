@@ -15,9 +15,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
     @Autowired
     private IEnseignantBusiness enseignantBusiness;
 
-    private static String getRedirectEnseignant(){
-     return "redirect:/enseignant";
-    }
+    private static String getRedirectEnseignant = "redirect:/enseignant";
 
     @Override
     @GetMapping(path = "/enseignant", name = "enseignant")
@@ -53,7 +51,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
     public String addPost(@ModelAttribute Enseignant enseignant) {
         enseignantBusiness.add(enseignant);
 
-        return getRedirectEnseignant();
+        return getRedirectEnseignant;
     }
 
     @Override
@@ -61,7 +59,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
     public String delete(@RequestParam Integer id) {
         enseignantBusiness.delete(id);
 
-        return getRedirectEnseignant();
+        return getRedirectEnseignant;
     }
 
     @Override
@@ -78,7 +76,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
     public String modifierPost(Enseignant enseignant) {
         enseignantBusiness.modifier(enseignant);
 
-        return getRedirectEnseignant();
+        return getRedirectEnseignant;
     }
 
 }

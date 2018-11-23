@@ -20,9 +20,7 @@ public class MatiereControllerImpl implements IMatiereController {
     @Autowired
     private IMatiereBusiness matiereBusiness;
 
-    private static String getRedirectMatiere(){
-        return "redirect:/matiere";
-    }
+    private static String getRedirectMatiere = "redirect:/matiere";
 
     @Override
     @GetMapping(path = "/matiere", name = "matiere")
@@ -57,7 +55,7 @@ public class MatiereControllerImpl implements IMatiereController {
     public String addPost(@ModelAttribute Matiere matiere) {
         matiereBusiness.add(matiere);
 
-        return getRedirectMatiere();
+        return getRedirectMatiere;
     }
 
     @Override
@@ -65,7 +63,7 @@ public class MatiereControllerImpl implements IMatiereController {
     public String delete(Integer id) {
         matiereBusiness.delete(id);
 
-        return getRedirectMatiere();
+        return getRedirectMatiere;
     }
 
     @Override
@@ -86,7 +84,7 @@ public class MatiereControllerImpl implements IMatiereController {
         matiere.setEnseignant(e);
         matiereBusiness.modifier(matiere);
 
-        return getRedirectMatiere();
+        return getRedirectMatiere;
     }
 
 

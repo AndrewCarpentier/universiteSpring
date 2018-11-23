@@ -3,6 +3,7 @@ package fr.andrew.universite.universite.etudiant.controller.impl;
 import fr.andrew.universite.universite.etudiant.business.IEtudiantBusiness;
 import fr.andrew.universite.universite.etudiant.controller.IEtudiantController;
 import fr.andrew.universite.universite.etudiant.domain.Etudiant;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,20 +15,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
+@Slf4j
 public class EtudiantControllerImpl implements IEtudiantController {
 
     @Autowired
     private IEtudiantBusiness etudiantBusiness;
 
-    private static String getRedirectEtudiant(){
-        return "redirect:/etudiant";
-    }
+    private static String getRedirectEtudiant = "redirect:/etudiant";
+
 
 
     @Override
     @GetMapping(path = "/etudiant", name = "etudiant")
     public String findAll(Model model) {
         List<Etudiant> etudiant = etudiantBusiness.findAll();
+        log.info("coucou avec LOmbok");
         model.addAttribute("etudiant", etudiant);
 
         return "etudiant/etudiant";
@@ -56,7 +58,7 @@ public class EtudiantControllerImpl implements IEtudiantController {
     public String addPost(@ModelAttribute Etudiant etudiant) {
         etudiantBusiness.add(etudiant);
 
-        return getRedirectEtudiant();
+        return getRedirectEtudiant;
     }
 
     @Override
@@ -64,7 +66,7 @@ public class EtudiantControllerImpl implements IEtudiantController {
     public String delete(@RequestParam Integer id) {
         etudiantBusiness.delete(id);
 
-        return getRedirectEtudiant();
+        return getRedirectEtudiant;
     }
 
     @Override
@@ -81,7 +83,7 @@ public class EtudiantControllerImpl implements IEtudiantController {
     public String modifierPost(@ModelAttribute Etudiant etudiant) {
         etudiantBusiness.modifier(etudiant);
 
-        return getRedirectEtudiant();
+        return getRedirectEtudiant;
     }
 
     @Override
