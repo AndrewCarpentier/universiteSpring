@@ -19,7 +19,7 @@
 
     <!--formulaire-->
     <div class="mx-auto w-25 p-3">
-        <form class="well form-horizontal" th:action="@{/etudiant/add}" th:object="${etudiant}" method="post">
+        <form class="well form-horizontal" th:action="@{/etudiant/add}" th:object="${etudiantAdd}" method="post">
             <fieldset>
                 <label for="id"></label>
                 <input type="hidden" th:field="*{id}" id="id">

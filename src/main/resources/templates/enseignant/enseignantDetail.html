@@ -9,13 +9,13 @@
 <body>
 
     <div class="list-group mx-auto w-25 p-3">
-        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignant.numeroEnseignant}"></button>
-        <button type="button" class="list-group-item list-group-item-action list-group-item-light" th:text="${enseignant.nom}"></button>
-        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignant.prenom}"></button>
-        <button type="button" class="list-group-item list-group-item-action list-group-item-light" th:text="${enseignant.dateNaissance}"></button>
-        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignant.sexe}"></button>
-        <button type="button" class="list-group-item list-group-item-action list-group-item-light" th:text="${enseignant.grade}"></button>
-        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignant.dateEmbauche}"></button>
+        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignantDetail.numeroEnseignant}"></button>
+        <button type="button" class="list-group-item list-group-item-action list-group-item-light" th:text="${enseignantDetail.nom}"></button>
+        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignantDetail.prenom}"></button>
+        <button type="button" class="list-group-item list-group-item-action list-group-item-light" th:text="${enseignantDetail.dateNaissance}"></button>
+        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignantDetail.sexe}"></button>
+        <button type="button" class="list-group-item list-group-item-action list-group-item-light" th:text="${enseignantDetail.grade}"></button>
+        <button type="button" class="list-group-item list-group-item-action " th:text="${enseignantDetail.dateEmbauche}"></button>
         <a th:href="@{/matiere}" class="list-group-item list-group-item-action list-group-item-light" role="button"><i class="fa fa-reply">  Retour liste matiere</i></a>
     </div>
 

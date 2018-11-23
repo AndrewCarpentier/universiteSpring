@@ -30,7 +30,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
     @GetMapping(path = "/enseignant/detail", name = "detail")
     public String findOneById(Model model, @RequestParam Integer id) {
         Enseignant enseignantById = enseignantBusiness.findOneById(id);
-        model.addAttribute("enseignant", enseignantById);
+        model.addAttribute("enseignantDetail", enseignantById);
 
         return "enseignant/enseignantDetail";
     }
@@ -40,7 +40,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
     public String add(Model model) {
         Enseignant enseignant = new Enseignant();
         enseignant.setSexe("M");
-        model.addAttribute("enseignant", enseignant);
+        model.addAttribute("enseignantAdd", enseignant);
 
 
         return "enseignant/enseignantAdd";
@@ -48,8 +48,8 @@ public class EnseignantControllerImpl implements IEnseignantController {
 
     @Override
     @PostMapping(path = "/enseignant/add", name = "add")
-    public String addPost(@ModelAttribute Enseignant enseignant) {
-        enseignantBusiness.add(enseignant);
+    public String addPost(@ModelAttribute Enseignant enseignantAdd) {
+        enseignantBusiness.add(enseignantAdd);
 
         return getRedirectEnseignant;
     }
@@ -67,14 +67,14 @@ public class EnseignantControllerImpl implements IEnseignantController {
     public String modifier(Model model, @RequestParam Integer id) {
         Enseignant enseignantById2 = enseignantBusiness.findOneById(id);
 
-        model.addAttribute("enseignant", enseignantById2);
+        model.addAttribute("enseignantModifier", enseignantById2);
         return "/enseignant/enseignantModifier";
     }
 
     @Override
     @PostMapping(path = "/enseignant/modifier", name = "modifier")
-    public String modifierPost(Enseignant enseignant) {
-        enseignantBusiness.modifier(enseignant);
+    public String modifierPost(@ModelAttribute Enseignant enseignantModifier) {
+        enseignantBusiness.modifier(enseignantModifier);
 
         return getRedirectEnseignant;
     }

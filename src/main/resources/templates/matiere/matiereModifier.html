@@ -22,7 +22,7 @@
 
     <!--formulaire-->
     <div class="mx-auto w-25 ">
-        <form class="well form-horizontal" th:action="@{/matiere/modifier}" th:object="${matiere}" method="post">
+        <form class="well form-horizontal" th:action="@{/matiere/modifier}" th:object="${matiereModifier}" method="post">
             <fieldset>
                 <label for="id"></label>
                 <input type="hidden" th:field="*{id}" id="id">

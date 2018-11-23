@@ -29,7 +29,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="etudiant:${etudiant}">
+        <tr th:each="etudiant:${etudiants}">
             <th scope="row" th:text="${etudiant.id}"></th>
             <td th:text="${etudiant.numeroEtudiant}"></td>
             <td th:text="${etudiant.nom}"></td>

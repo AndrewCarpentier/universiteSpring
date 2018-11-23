@@ -35,7 +35,7 @@ public class MatiereControllerImpl implements IMatiereController {
     @GetMapping(path = "/matiere/detail", name = "detail")
     public String findOneById(Model model, @RequestParam Integer id) {
         Matiere matiere = matiereBusiness.findOneById(id);
-        model.addAttribute("matiere", matiere);
+        model.addAttribute("matiereDetail", matiere);
 
         return "/matiere/matiereDetail";
     }
@@ -44,7 +44,7 @@ public class MatiereControllerImpl implements IMatiereController {
     @GetMapping(path = "/matiere/add", name = "add")
     public String add(Model model) {
         List<Enseignant> enseignants = matiereBusiness.getEnseignant();
-        model.addAttribute("matiere", new Matiere());
+        model.addAttribute("matiereAdd", new Matiere());
         model.addAttribute("enseignants", enseignants);
 
         return "/matiere/matiereAdd";
@@ -71,7 +71,7 @@ public class MatiereControllerImpl implements IMatiereController {
     public String modifier(Model model, @RequestParam Integer id) {
         List<Enseignant> enseignant = matiereBusiness.getEnseignant();
         Matiere matiere = matiereBusiness.findOneById(id);
-        model.addAttribute("matiere", matiere);
+        model.addAttribute("matiereModifier", matiere);
         model.addAttribute("enseignants", enseignant);
 
         return "/matiere/matiereModifier";

@@ -30,7 +30,7 @@ public class EtudiantControllerImpl implements IEtudiantController {
     public String findAll(Model model) {
         List<Etudiant> etudiant = etudiantBusiness.findAll();
         log.info("coucou avec LOmbok");
-        model.addAttribute("etudiant", etudiant);
+        model.addAttribute("etudiants", etudiant);
 
         return "etudiant/etudiant";
     }
@@ -39,7 +39,7 @@ public class EtudiantControllerImpl implements IEtudiantController {
     @GetMapping(path = "/etudiant/detail", name = "detail")
     public String findOneById(Model model, @RequestParam Integer id) {
         Etudiant etudiant = etudiantBusiness.findOneById(id);
-        model.addAttribute("etudiant", etudiant);
+        model.addAttribute("etudiantDetail", etudiant);
         return "etudiant/etudiantDetail";
     }
 
@@ -48,15 +48,15 @@ public class EtudiantControllerImpl implements IEtudiantController {
     public String add(Model model) {
         Etudiant etudiant = new Etudiant();
         etudiant.setSexe("M");
-        model.addAttribute("etudiant", etudiant);
+        model.addAttribute("etudiantAdd", etudiant);
 
         return "etudiant/etudiantAdd";
     }
 
     @Override
     @PostMapping(path = "/etudiant/add", name = "add")
-    public String addPost(@ModelAttribute Etudiant etudiant) {
-        etudiantBusiness.add(etudiant);
+    public String addPost(@ModelAttribute Etudiant etudiantAdd) {
+        etudiantBusiness.add(etudiantAdd);
 
         return getRedirectEtudiant;
     }
